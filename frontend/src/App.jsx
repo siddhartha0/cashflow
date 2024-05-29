@@ -1,22 +1,20 @@
-import { Component } from "react";
-import { Outlet } from "react-router-dom";
-import MainPageLayout from "./components/pages/MainPageLayout";
+import "./App.css";
+import Footer from "./Components/common/Footer";
+import Navbar from "./Components/common/Navbar";
+import Sidebar from "./Components/common/Sidebar";
+import Homepage from "./Page/Homepage";
 
-export default class App extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <div className="flex w-screen h-[100vh] justify-between gap-4 bg-primary ">
-        <div>
-          <MainPageLayout />
-        </div>
-        <div className="flex-1 m-2">
-          <Outlet />
-        </div>
+function App() {
+  return (
+    <>
+      <div className="wrapper">
+        <Navbar />
+        <Sidebar />
+        <Homepage />
+        <Footer />
       </div>
-    );
-  }
+    </>
+  );
 }
+
+export default App;
